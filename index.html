@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Happy Birthday! 🎉</title>
+    <title>Happy Birthday! 🎉💕</title>
     <style>
         * {
             margin: 0;
@@ -11,469 +11,295 @@
             box-sizing: border-box;
         }
 
-        :root {
-            --primary: #6366f1;
-            --secondary: #ec4899;
-            --accent: #f59e0b;
-            --dark: #1f2937;
-            --light: #f9fafb;
-            --gradient1: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            --gradient2: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
-            --gradient3: linear-gradient(135deg, #fa709a 0%, #fee140 100%);
-        }
-
         body {
-            font-family: 'Inter', 'Segoe UI', sans-serif;
-            background: var(--light);
-            color: var(--dark);
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #fff5f7 0%, #ffe4e1 50%, #ffd4e5 100%);
+            min-height: 100vh;
             overflow-x: hidden;
-            line-height: 1.6;
+            color: #333;
         }
 
-        /* Animated Background */
-        .animated-bg {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: -1;
-            background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
-            background-size: 400% 400%;
-            animation: gradient 15s ease infinite;
-        }
-
-        @keyframes gradient {
-            0% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-            100% { background-position: 0% 50%; }
-        }
-
-        .overlay {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(255, 255, 255, 0.92);
-            backdrop-filter: blur(10px);
-            z-index: -1;
-        }
-
-        /* Floating Elements */
-        .floating-shapes {
-            position: fixed;
-            width: 100%;
-            height: 100%;
-            top: 0;
-            left: 0;
-            z-index: 0;
-            pointer-events: none;
-            overflow: hidden;
-        }
-
-        .shape {
-            position: absolute;
-            opacity: 0.05;
-        }
-
-        .shape1 {
-            width: 300px;
-            height: 300px;
-            background: var(--primary);
-            border-radius: 40% 60% 70% 30% / 40% 50% 60% 50%;
-            animation: float 20s infinite ease-in-out;
-            top: -50px;
-            left: -50px;
-        }
-
-        .shape2 {
-            width: 200px;
-            height: 200px;
-            background: var(--secondary);
-            border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
-            animation: float 25s infinite ease-in-out reverse;
-            bottom: -50px;
-            right: -50px;
-        }
-
-        .shape3 {
-            width: 250px;
-            height: 250px;
-            background: var(--accent);
-            border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
-            animation: float 30s infinite ease-in-out;
-            top: 50%;
-            right: 5%;
-        }
-
-        @keyframes float {
-            0%, 100% { transform: translateY(0) rotate(0deg); }
-            50% { transform: translateY(-50px) rotate(10deg); }
-        }
-
-        /* Container */
         .container {
             max-width: 1200px;
             margin: 0 auto;
             padding: 20px;
-            position: relative;
-            z-index: 1;
         }
 
         /* Header */
         .header {
             text-align: center;
-            padding: 60px 20px 40px;
-            animation: slideDown 0.8s ease-out;
-        }
-
-        @keyframes slideDown {
-            from {
-                opacity: 0;
-                transform: translateY(-30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
+            padding: 60px 20px;
+            background: linear-gradient(135deg, #ff6b9d 0%, #ffa07a 100%);
+            border-radius: 30px;
+            color: white;
+            margin-bottom: 40px;
+            box-shadow: 0 10px 40px rgba(255, 107, 157, 0.3);
         }
 
         .header h1 {
-            font-size: 4.5rem;
-            font-weight: 900;
-            background: var(--gradient2);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            margin-bottom: 10px;
-            letter-spacing: -2px;
+            font-size: 4rem;
+            margin-bottom: 15px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
         }
 
         .header p {
-            font-size: 1.4rem;
-            color: var(--dark);
-            opacity: 0.7;
-            margin-bottom: 30px;
-            font-weight: 300;
+            font-size: 1.5rem;
+            opacity: 0.95;
         }
 
-        /* Main Grid Layout */
-        .main-grid {
+        /* Main Grid */
+        .main-content {
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 40px;
-            margin: 60px 0;
-            align-items: center;
+            margin-bottom: 60px;
         }
 
-        /* Photo Gallery - Large Section */
-        .gallery-section {
-            animation: slideUp 0.8s ease-out 0.2s both;
-        }
-
-        @keyframes slideUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        .section-title {
-            font-size: 2rem;
-            font-weight: 800;
-            margin-bottom: 25px;
-            color: var(--dark);
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-
-        .section-title span {
+        /* Gallery Section */
+        .gallery-section h2 {
             font-size: 2.5rem;
+            margin-bottom: 30px;
+            color: #ff6b9d;
+            text-align: center;
         }
 
-        .gallery-grid {
+        .gallery {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 15px;
-            margin-bottom: 40px;
+            gap: 20px;
         }
 
         .gallery-item {
-            position: relative;
-            overflow: hidden;
             border-radius: 20px;
-            aspect-ratio: 1;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+            transition: all 0.3s ease;
             cursor: pointer;
-            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
-            transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
-            animation: popIn 0.6s ease-out backwards;
-        }
-
-        .gallery-item:nth-child(1) { animation-delay: 0s; }
-        .gallery-item:nth-child(2) { animation-delay: 0.1s; }
-        .gallery-item:nth-child(3) { animation-delay: 0.2s; }
-        .gallery-item:nth-child(4) { animation-delay: 0.3s; }
-        .gallery-item:nth-child(5) { animation-delay: 0.4s; }
-        .gallery-item:nth-child(6) { animation-delay: 0.5s; }
-
-        @keyframes popIn {
-            from {
-                opacity: 0;
-                transform: scale(0.8);
-            }
-            to {
-                opacity: 1;
-                transform: scale(1);
-            }
+            aspect-ratio: 1;
         }
 
         .gallery-item img {
             width: 100%;
             height: 100%;
             object-fit: cover;
-            transition: transform 0.5s ease;
+            transition: transform 0.3s ease;
         }
 
         .gallery-item:hover {
-            transform: translateY(-15px);
-            box-shadow: 0 25px 60px rgba(0, 0, 0, 0.15);
+            transform: translateY(-10px);
+            box-shadow: 0 15px 50px rgba(255, 107, 157, 0.3);
         }
 
         .gallery-item:hover img {
-            transform: scale(1.1);
+            transform: scale(1.05);
         }
 
         .gallery-item.large {
             grid-column: span 2;
-        }
-
-        .gallery-item.large img {
             aspect-ratio: 2/1;
         }
 
-        /* Right Section - Content */
-        .content-section {
-            animation: slideUp 0.8s ease-out 0.3s both;
+        /* Content Cards */
+        .content-section h2 {
+            font-size: 2.5rem;
+            margin-bottom: 30px;
+            color: #ff6b9d;
+            text-align: center;
         }
 
         .card {
             background: white;
             border-radius: 20px;
-            padding: 40px;
+            padding: 30px;
             margin-bottom: 25px;
-            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
-            transition: all 0.4s ease;
-            border: 1px solid rgba(0, 0, 0, 0.05);
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
         }
 
         .card:hover {
             transform: translateY(-5px);
-            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.12);
+            box-shadow: 0 10px 35px rgba(255, 107, 157, 0.2);
         }
 
         .card h3 {
-            font-size: 1.5rem;
-            margin-bottom: 15px;
-            color: var(--dark);
-            font-weight: 700;
-        }
-
-        .card p {
-            font-size: 1.05rem;
-            color: var(--dark);
-            opacity: 0.8;
-            line-height: 1.8;
-        }
-
-        /* Wishes Grid */
-        .wishes-container {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 15px;
+            color: #ff6b9d;
+            margin-bottom: 20px;
+            font-size: 1.4rem;
         }
 
         .wish-item {
-            background: linear-gradient(135deg, rgba(99, 102, 241, 0.1) 0%, rgba(236, 72, 153, 0.1) 100%);
-            padding: 20px;
+            background: linear-gradient(135deg, #fff5f7 0%, #ffe4e1 100%);
+            padding: 15px;
+            margin-bottom: 15px;
             border-radius: 15px;
-            border-left: 4px solid var(--secondary);
+            border-left: 4px solid #ff6b9d;
             cursor: pointer;
             transition: all 0.3s ease;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .wish-item::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
-            transition: left 0.5s ease;
-        }
-
-        .wish-item:hover::before {
-            left: 100%;
         }
 
         .wish-item:hover {
             transform: translateX(10px);
-            background: linear-gradient(135deg, rgba(99, 102, 241, 0.15) 0%, rgba(236, 72, 153, 0.15) 100%);
+            background: linear-gradient(135deg, #ffe4e1 0%, #ffd4e5 100%);
         }
 
         .wish-item p {
             margin: 0;
-            font-size: 0.95rem;
-            color: var(--dark);
-            font-weight: 500;
+            font-size: 1.05rem;
+            color: #333;
         }
 
-        /* Stats/Timeline */
-        .stats-grid {
+        /* Timeline/About Section */
+        .timeline-section {
+            background: white;
+            border-radius: 20px;
+            padding: 40px;
+            margin: 40px 0;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .timeline-section h2 {
+            font-size: 2.5rem;
+            text-align: center;
+            color: #ff6b9d;
+            margin-bottom: 40px;
+        }
+
+        .timeline-item {
             display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 15px;
-            margin-top: 20px;
+            grid-template-columns: 150px 1fr;
+            gap: 30px;
+            margin-bottom: 30px;
+            padding-bottom: 30px;
+            border-bottom: 2px solid #ffe4e1;
         }
 
-        .stat-box {
-            background: linear-gradient(135deg, var(--gradient1));
+        .timeline-item:last-child {
+            border-bottom: none;
+        }
+
+        .timeline-year {
+            background: linear-gradient(135deg, #ff6b9d 0%, #ffa07a 100%);
             color: white;
-            padding: 25px;
+            padding: 15px;
             border-radius: 15px;
             text-align: center;
-            transition: all 0.4s ease;
+            font-weight: bold;
+            font-size: 1.2rem;
         }
 
-        .stat-box:hover {
-            transform: scale(1.05);
-            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+        .timeline-content {
+            padding-top: 10px;
         }
 
-        .stat-number {
-            font-size: 2.5rem;
-            font-weight: 900;
-            display: block;
+        .timeline-content h3 {
+            color: #ff6b9d;
+            margin-bottom: 10px;
+            font-size: 1.3rem;
         }
 
-        .stat-label {
-            font-size: 0.9rem;
-            opacity: 0.9;
-            margin-top: 5px;
+        .timeline-content p {
+            color: #666;
+            line-height: 1.6;
+            font-size: 1.05rem;
         }
 
-        /* Message Section */
-        .message-card {
-            background: var(--gradient3);
-            color: white;
-            padding: 50px;
-            border-radius: 25px;
-            text-align: center;
+        /* Messages Section */
+        .messages-section {
+            background: white;
+            border-radius: 20px;
+            padding: 40px;
             margin: 40px 0;
-            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
-            position: relative;
-            overflow: hidden;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
         }
 
-        .message-card::before {
-            content: '';
-            position: absolute;
-            top: -50%;
-            right: -50%;
-            width: 500px;
-            height: 500px;
-            background: rgba(255, 255, 255, 0.1);
-            border-radius: 50%;
-            animation: pulse 4s ease-in-out infinite;
-        }
-
-        @keyframes pulse {
-            0%, 100% { transform: scale(1); opacity: 0.5; }
-            50% { transform: scale(1.2); opacity: 0.3; }
-        }
-
-        .message-card h2 {
+        .messages-section h2 {
             font-size: 2.5rem;
+            text-align: center;
+            color: #ff6b9d;
+            margin-bottom: 40px;
+        }
+
+        .message-card {
+            background: linear-gradient(135deg, #fff5f7 0%, #ffe4e1 100%);
+            padding: 30px;
             margin-bottom: 20px;
-            position: relative;
-            z-index: 1;
+            border-radius: 15px;
+            border-left: 5px solid #ff6b9d;
         }
 
         .message-card p {
-            font-size: 1.2rem;
-            line-height: 2;
-            position: relative;
-            z-index: 1;
-            font-weight: 300;
+            font-size: 1.1rem;
+            color: #333;
+            line-height: 1.8;
         }
 
-        /* CTA Button */
-        .cta-button {
-            background: var(--gradient2);
+        /* Special Message */
+        .special-message {
+            background: linear-gradient(135deg, #ff6b9d 0%, #ffa07a 100%);
             color: white;
+            border-radius: 25px;
+            padding: 60px 40px;
+            text-align: center;
+            margin: 60px 0;
+            box-shadow: 0 15px 50px rgba(255, 107, 157, 0.3);
+        }
+
+        .special-message h2 {
+            font-size: 2.8rem;
+            margin-bottom: 30px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+        }
+
+        .special-message p {
+            font-size: 1.3rem;
+            line-height: 1.9;
+            margin-bottom: 20px;
+            opacity: 0.95;
+        }
+
+        .celebrate-btn {
+            background: white;
+            color: #ff6b9d;
             border: none;
             padding: 18px 50px;
             border-radius: 50px;
-            font-size: 1.1rem;
-            font-weight: 700;
+            font-size: 1.2rem;
+            font-weight: bold;
             cursor: pointer;
-            transition: all 0.4s ease;
-            box-shadow: 0 10px 30px rgba(236, 72, 153, 0.3);
-            display: inline-block;
             margin-top: 30px;
-            position: relative;
-            overflow: hidden;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
         }
 
-        .cta-button::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: rgba(255, 255, 255, 0.2);
-            transition: left 0.5s ease;
+        .celebrate-btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 10px 35px rgba(0, 0, 0, 0.2);
         }
 
-        .cta-button:hover::before {
-            left: 100%;
-        }
-
-        .cta-button:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 15px 50px rgba(236, 72, 153, 0.4);
-        }
-
-        .cta-button:active {
-            transform: translateY(-1px);
-        }
-
-        /* Footer Section */
-        .celebration-section {
+        /* Celebration Section */
+        .celebration {
             text-align: center;
-            padding: 80px 20px;
-            animation: fadeIn 1s ease-out 0.5s both;
+            padding: 60px 20px;
+            background: white;
+            border-radius: 20px;
+            margin: 40px 0;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
         }
 
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
+        .celebration h2 {
+            font-size: 3rem;
+            background: linear-gradient(135deg, #ff6b9d 0%, #ffa07a 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 30px;
         }
 
         .celebration-emoji {
-            font-size: 5rem;
-            margin: 20px 0;
+            font-size: 4rem;
+            margin: 20px 10px;
             display: inline-block;
-            animation: bounce-emoji 2s ease-in-out infinite;
+            animation: bounce 2s infinite;
         }
 
         .celebration-emoji:nth-child(2) { animation-delay: 0.1s; }
@@ -481,33 +307,43 @@
         .celebration-emoji:nth-child(4) { animation-delay: 0.3s; }
         .celebration-emoji:nth-child(5) { animation-delay: 0.4s; }
 
-        @keyframes bounce-emoji {
-            0%, 100% { transform: translateY(0) rotate(0deg); }
-            50% { transform: translateY(-20px) rotate(10deg); }
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-20px); }
         }
 
         .celebration-text {
-            font-size: 3rem;
-            font-weight: 900;
-            background: var(--gradient2);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
+            font-size: 1.4rem;
+            color: #333;
             margin: 30px 0;
         }
 
-        /* Responsive */
-        @media (max-width: 768px) {
-            .main-grid {
+        /* Gallery Grid Responsive */
+        @media (max-width: 968px) {
+            .main-content {
                 grid-template-columns: 1fr;
-                gap: 30px;
             }
 
             .header h1 {
-                font-size: 3rem;
+                font-size: 2.5rem;
             }
 
-            .gallery-grid {
+            .gallery {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .timeline-item {
+                grid-template-columns: 1fr;
+                gap: 15px;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .header h1 {
+                font-size: 2rem;
+            }
+
+            .gallery {
                 grid-template-columns: 1fr;
             }
 
@@ -515,70 +351,52 @@
                 grid-column: span 1;
             }
 
-            .stats-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .message-card {
-                padding: 30px;
-            }
-
             .celebration-emoji {
-                font-size: 3rem;
+                font-size: 2.5rem;
             }
 
-            .celebration-text {
-                font-size: 2rem;
+            .celebration h2 {
+                font-size: 1.8rem;
+            }
+
+            .special-message {
+                padding: 40px 20px;
+            }
+
+            .special-message h2 {
+                font-size: 1.8rem;
             }
         }
 
-        /* Particles */
-        .particle {
+        /* Confetti */
+        .confetti {
             position: fixed;
             pointer-events: none;
             z-index: 999;
         }
 
-        @keyframes particleFloat {
-            0% {
-                opacity: 1;
-                transform: translateY(0) translateX(0);
-            }
-            100% {
-                opacity: 0;
-                transform: translateY(-100px) translateX(var(--tx));
-            }
+        .heart-confetti {
+            position: fixed;
+            font-size: 2rem;
+            z-index: 999;
+            pointer-events: none;
         }
     </style>
 </head>
 <body>
-    <!-- Animated Background -->
-    <div class="animated-bg"></div>
-    <div class="overlay"></div>
-
-    <!-- Floating Shapes -->
-    <div class="floating-shapes">
-        <div class="shape shape1"></div>
-        <div class="shape shape2"></div>
-        <div class="shape shape3"></div>
-    </div>
-
-    <!-- Main Content -->
     <div class="container">
         <!-- Header -->
         <div class="header">
-            <h1>🎉 Happy Birthday! 🎉</h1>
-            <p>Celebrating YOU on this special day</p>
+            <h1>✨ Happy Birthday! ✨</h1>
+            <p>Celebrating the amazing YOU today! 💕</p>
         </div>
 
-        <!-- Main Grid -->
-        <div class="main-grid">
-            <!-- Photo Gallery Section -->
+        <!-- Main Content -->
+        <div class="main-content">
+            <!-- Gallery Section -->
             <div class="gallery-section">
-                <div class="section-title">
-                    <span>📸</span> Your Beautiful Moments
-                </div>
-                <div class="gallery-grid">
+                <h2>📸 Your Beautiful Moments</h2>
+                <div class="gallery">
                     <div class="gallery-item">
                         <img src="https://kommodo.ai/i/TLPjc7wQZk6kft9MGBZe" alt="Memory 1">
                     </div>
@@ -602,129 +420,193 @@
 
             <!-- Content Section -->
             <div class="content-section">
-                <!-- Wishes Card -->
+                <h2>💌 Wishes & Love</h2>
+                
                 <div class="card">
-                    <div class="section-title">
-                        <span>💌</span> Special Wishes
+                    <h3>Special Wishes</h3>
+                    <div class="wish-item">
+                        <p>🌟 May your day be filled with love and laughter!</p>
                     </div>
-                    <div class="wishes-container">
-                        <div class="wish-item">
-                            <p>✨ May your day be as special as you are!</p>
-                        </div>
-                        <div class="wish-item">
-                            <p>💫 Another year older, another year wiser!</p>
-                        </div>
-                        <div class="wish-item">
-                            <p>🌟 You deserve all the happiness today!</p>
-                        </div>
-                        <div class="wish-item">
-                            <p>💝 Thank you for being YOU!</p>
-                        </div>
+                    <div class="wish-item">
+                        <p>💫 You deserve all the happiness today and always!</p>
+                    </div>
+                    <div class="wish-item">
+                        <p>🌹 Thank you for being YOU - you make everyone's life better!</p>
+                    </div>
+                    <div class="wish-item">
+                        <p>✨ Here's to another year of amazing adventures!</p>
+                    </div>
+                    <div class="wish-item">
+                        <p>💖 You are loved more than you know!</p>
+                    </div>
+                    <div class="wish-item">
+                        <p>🎉 Cheers to being another year younger in spirit!</p>
                     </div>
                 </div>
 
-                <!-- Stats Card -->
                 <div class="card">
-                    <div class="section-title">
-                        <span>🎂</span> Celebration Stats
-                    </div>
-                    <div class="stats-grid">
-                        <div class="stat-box" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);">
-                            <span class="stat-number">365</span>
-                            <span class="stat-label">Days of Magic</span>
-                        </div>
-                        <div class="stat-box" style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);">
-                            <span class="stat-number">∞</span>
-                            <span class="stat-label">Wishes Coming True</span>
-                        </div>
-                    </div>
+                    <h3>Why You're Special</h3>
+                    <p style="color: #666; line-height: 1.8; font-size: 1.05rem;">
+                        Your kindness radiates to everyone around you. Your smile brightens any room. Your dreams inspire us all. Your presence matters. Today we celebrate not just your birthday, but YOU - the incredible person you are every single day. 💕
+                    </p>
                 </div>
             </div>
         </div>
 
-        <!-- Message Section -->
-        <div class="message-card">
-            <h2>💝 A Special Message For You 💝</h2>
-            <p>Today is all about celebrating YOU – your incredible presence, your amazing energy, and the joy you bring to everyone around you. May this year be filled with endless possibilities, beautiful moments, and all the happiness you deserve. Here's to another year of growth, love, and unforgettable memories!</p>
-            <button class="cta-button" onclick="celebrateNow()">🎊 Let's Celebrate! 🎊</button>
+        <!-- Timeline Section -->
+        <div class="timeline-section">
+            <h2>🎂 Your Beautiful Journey</h2>
+            
+            <div class="timeline-item">
+                <div class="timeline-year">🎈 BIRTH</div>
+                <div class="timeline-content">
+                    <h3>The Beginning</h3>
+                    <p>The world became a brighter place the day you were born! A precious soul arrived to spread joy and love.</p>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-year">🌟 CHILDHOOD</div>
+                <div class="timeline-content">
+                    <h3>Days of Wonder</h3>
+                    <p>Growing up, discovering the world, and creating memories that would last a lifetime. Every moment was magical.</p>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-year">📚 LEARNING</div>
+                <div class="timeline-content">
+                    <h3>Growing Wiser</h3>
+                    <p>Through challenges and victories, you learned, grew, and became stronger. Every experience shaped you into who you are.</p>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-year">🚀 DREAMS</div>
+                <div class="timeline-content">
+                    <h3>Chasing Goals</h3>
+                    <p>You dared to dream big and worked tirelessly to achieve them. Your determination is truly inspiring!</p>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-year">💫 TODAY</div>
+                <div class="timeline-content">
+                    <h3>Celebration Time!</h3>
+                    <p>Today is YOUR day! A day to celebrate all you've accomplished, all you are, and all you're yet to become.</p>
+                </div>
+            </div>
         </div>
 
-        <!-- Celebration Section -->
-        <div class="celebration-section">
-            <div style="display: flex; justify-content: center; gap: 20px; flex-wrap: wrap;">
-                <div class="celebration-emoji">🎉</div>
-                <div class="celebration-emoji">🎈</div>
-                <div class="celebration-emoji">🎊</div>
-                <div class="celebration-emoji">💕</div>
-                <div class="celebration-emoji">✨</div>
+        <!-- Messages Section -->
+        <div class="messages-section">
+            <h2>💌 Messages of Love</h2>
+            
+            <div class="message-card">
+                <p>🌹 "You have the power to make others smile just by being yourself. Never forget how special you truly are!"</p>
             </div>
-            <div class="celebration-text">Have the most MAGICAL Birthday Ever! 🌟</div>
-            <p style="font-size: 1.2rem; color: var(--dark); opacity: 0.7; margin-top: 20px;">You are loved, appreciated, and absolutely AMAZING! 💖</p>
+
+            <div class="message-card">
+                <p>💖 "Every year you get more amazing. Watching you grow has been one of life's greatest joys!"</p>
+            </div>
+
+            <div class="message-card">
+                <p>✨ "Your kindness, strength, and beautiful spirit make the world a better place. Thank you for being YOU!"</p>
+            </div>
+
+            <div class="message-card">
+                <p>🎉 "Another year older, another year wiser, another year more fabulous! Happy Birthday to the most amazing person!"</p>
+            </div>
+
+            <div class="message-card">
+                <p>💝 "On this special day, we celebrate YOU - your dreams, your passions, your light, and your love!"</p>
+            </div>
+
+            <div class="message-card">
+                <p>🌟 "May this year bring you endless joy, beautiful moments, and all the love you deserve!"</p>
+            </div>
+        </div>
+
+        <!-- Special Message -->
+        <div class="special-message">
+            <h2>💝 A Special Message Just For You 💝</h2>
+            <p>Today is a celebration of YOU – the incredible, amazing, beautiful person you are. Your smile lights up every room. Your laughter is contagious. Your kindness touches hearts. Your strength inspires us all.</p>
+            <p>On this special day, we want you to know how much you mean to us. You deserve all the happiness, love, and joy in this world. Keep dreaming, keep shining, keep being YOU!</p>
+            <p style="font-size: 1.4rem; font-weight: bold; margin-top: 30px;">🎊 You are LOVED, you are APPRECIATED, and you are SPECIAL! 🎊</p>
+            <button class="celebrate-btn" onclick="celebrate()">🎉 Let's Celebrate! 🎉</button>
+        </div>
+
+        <!-- Celebration -->
+        <div class="celebration">
+            <h2>🎊 HAPPY BIRTHDAY! 🎊</h2>
+            <div>
+                <span class="celebration-emoji">🎉</span>
+                <span class="celebration-emoji">💕</span>
+                <span class="celebration-emoji">✨</span>
+                <span class="celebration-emoji">🎈</span>
+                <span class="celebration-emoji">💖</span>
+            </div>
+            <p class="celebration-text">Have the most AMAZING, MAGICAL, and WONDERFUL birthday ever! 🌟</p>
+            <p style="font-size: 1.2rem; color: #ff6b9d; font-weight: bold;">You deserve all the love in the world! 💕</p>
         </div>
     </div>
 
     <script>
-        // Particles effect
-        function createParticles(x, y) {
-            for (let i = 0; i < 20; i++) {
-                const particle = document.createElement('div');
-                particle.className = 'particle';
-                const emoji = ['🎉', '🎈', '🎊', '💕', '✨', '🌟', '💖', '🎂'][Math.floor(Math.random() * 8)];
-                particle.textContent = emoji;
-                particle.style.left = x + 'px';
-                particle.style.top = y + 'px';
-                particle.style.fontSize = (Math.random() * 20 + 20) + 'px';
-                
-                const angle = (Math.PI * 2 * i) / 20;
-                const velocity = Math.random() * 5 + 3;
-                const tx = Math.cos(angle) * velocity * 100;
-                particle.style.setProperty('--tx', tx + 'px');
-                particle.style.animation = `particleFloat ${2 + Math.random() * 1}s ease-out forwards`;
-                
-                document.body.appendChild(particle);
-                setTimeout(() => particle.remove(), 3000);
+        // Confetti function
+        function celebrate() {
+            createConfetti();
+        }
+
+        function createConfetti() {
+            for (let i = 0; i < 80; i++) {
+                createHeart();
             }
         }
 
-        // Click anywhere to create particles
+        function createHeart() {
+            const heart = document.createElement('div');
+            heart.className = 'heart-confetti';
+            heart.textContent = '💕';
+            heart.style.left = Math.random() * window.innerWidth + 'px';
+            heart.style.top = '-20px';
+            
+            const duration = Math.random() * 2 + 2;
+            const randomX = (Math.random() - 0.5) * 200;
+            
+            heart.style.animation = `fall ${duration}s linear forwards`;
+            heart.style.setProperty('--random-x', randomX + 'px');
+            
+            document.body.appendChild(heart);
+            
+            setTimeout(() => heart.remove(), duration * 1000);
+        }
+
+        // Add animation keyframes
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes fall {
+                to {
+                    transform: translateY(100vh) translateX(var(--random-x));
+                    opacity: 0;
+                }
+            }
+        `;
+        document.head.appendChild(style);
+
+        // Click anywhere for confetti
         document.addEventListener('click', (e) => {
-            createParticles(e.clientX, e.clientY);
+            if (e.target.tagName !== 'BUTTON') {
+                createHeart();
+                createHeart();
+                createHeart();
+            }
         });
 
-        // Celebrate button
-        function celebrateNow() {
-            const centerX = window.innerWidth / 2;
-            const centerY = window.innerHeight / 2;
-            
-            for (let i = 0; i < 50; i++) {
-                setTimeout(() => {
-                    createParticles(
-                        centerX + (Math.random() - 0.5) * 100,
-                        centerY + (Math.random() - 0.5) * 100
-                    );
-                }, i * 50);
+        // Auto confetti on page load
+        window.addEventListener('load', () => {
+            for (let i = 0; i < 30; i++) {
+                setTimeout(() => createHeart(), i * 100);
             }
-        }
-
-        // Scroll animations
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -100px 0px'
-        };
-
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.style.opacity = '1';
-                    entry.target.style.transform = 'translateY(0)';
-                }
-            });
-        }, observerOptions);
-
-        document.querySelectorAll('.card, .gallery-item').forEach(el => {
-            el.style.opacity = '0';
-            el.style.transform = 'translateY(20px)';
-            observer.observe(el);
         });
     </script>
 </body>
